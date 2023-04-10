@@ -8,22 +8,17 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    GameObject sceneCanvas;
-    Image uiImage;
-
-    public string heldItem = "";
+    public bool hasKey;
 
     // Start is called before the first frame update
     void Start()
     {
-        sceneCanvas = GameObject.Find("Canvas");
-        uiImage = sceneCanvas.GetComponentInChildren<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("hasKey: " + hasKey);
     }
 
     public void LoadSceneFromDoor(string sceneName)
@@ -33,11 +28,9 @@ public class GameManager : MonoBehaviour
 
     public bool PickupItem(Container containerInfo)
     {
-        if (heldItem == "")
+        if (!hasKey)
         {
-            heldItem = containerInfo.itemName;
-            uiImage.sprite = containerInfo.itemSprite;
-            uiImage.enabled = true;
+            hasKey = true;
             return true;
         }
         else

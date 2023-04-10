@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
     float speed = 0.53f;
 
     public Collider2D worldCollider;
