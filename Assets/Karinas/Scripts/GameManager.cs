@@ -10,6 +10,21 @@ public class GameManager : MonoBehaviour
 
     public bool hasKey;
 
+    private static GameManager instance;
+
+    private void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(this);
+        } else if(instance == null)
+        {
+            DontDestroyOnLoad(this);
+            instance = this;
+        }
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {

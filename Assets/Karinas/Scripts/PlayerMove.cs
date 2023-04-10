@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    float speed = 0.53f;
+    [Header("Movement Values")]
+    [Range(0.1f, 2f)][SerializeField] private float speed = 0.53f;
+    [SerializeField] private float sprint;
+    [SerializeField] private float stealh;
+    [SerializeField] private float swimming;
 
-    public Collider2D worldCollider;
+    [Header("World Collision")]
+    [SerializeField]
+    Collider2D worldCollider;
 
     // Update is called once per frame
     void Update()
