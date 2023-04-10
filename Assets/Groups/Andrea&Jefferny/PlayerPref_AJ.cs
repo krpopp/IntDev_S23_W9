@@ -24,6 +24,7 @@ public class PlayerPref_AJ : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // playerprefs store strings, floats, & int
+            // you can use it for music preferences, location of the player, etc...
             PlayerPrefs.SetFloat("playerX", transform.position.x); //1st argument is the key
             PlayerPrefs.SetFloat("playerY", transform.position.y); //2nd argument is player position 
             Debug.Log("saved position");
